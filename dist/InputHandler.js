@@ -16,13 +16,13 @@ class InputHandler {
         view.interactive = false;
     }
     static addKeyboardInput() {
-        document.addEventListener('keydown', this._onKeyboardPressed);
+        document.addEventListener('keydown', InputHandler._onKeyboardPressed);
     }
     static removeKeyboardInput() {
-        document.removeEventListener('keydown', this._onKeyboardPressed);
+        document.removeEventListener('keydown', InputHandler._onKeyboardPressed);
     }
     static _onKeyboardPressed(e) {
-        this.buttonClickedSignal.emit(e.key);
+        InputHandler.buttonClickedSignal.emit(e.key);
     }
 }
 exports.InputHandler = InputHandler;
