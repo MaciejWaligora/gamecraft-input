@@ -5,4 +5,6 @@ export declare class InputHandler {
     static attachClickHandler(view: View<ViewConfig>): void;
     static removeClickHandler(view: View<ViewConfig>): void;
     static addKeyboardInput(): void;
+    static removeKeyboardInput(): void;
+    static _onKeyboardPressed(e: KeyboardEvent): void;
 }

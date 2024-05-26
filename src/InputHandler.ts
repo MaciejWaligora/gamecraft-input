@@ -21,9 +21,15 @@ export class InputHandler{
     }
 
     public static addKeyboardInput(){
-        document.addEventListener('keydown', (e: KeyboardEvent)=>{
-            this.buttonClickedSignal.emit(e.key);
-        })
+        document.addEventListener('keydown', this._onKeyboardPressed)
+    }
+
+    public static removeKeyboardInput(){
+        document.removeEventListener('keydown', this._onKeyboardPressed);
+    }
+
+    public static _onKeyboardPressed(e: KeyboardEvent){
+        this.buttonClickedSignal.emit(e.key);
     }
 
 
